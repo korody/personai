@@ -4,43 +4,47 @@
     <title>illusion.ai Embedding Example </title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.illusion.ai/illusion.min.css">
-<script type="text/javascript" src="https://cdn.illusion.ai/illusion.min.js""></script>
-<style>
-body {background-color: powderblue;}
-</style>
-<div class="my_chat"></div>
+    <script type="text/javascript" src="https://cdn.illusion.ai/illusion.min.js"></script>
+  </head>
+  <body>
+    <!-- You can call this element anything you'd like. Just make sure it
+         matches the "targetNode" selector in the
+         JavaScript snippet below. Note that the element name needs to be proceeded by a "." in the "targetNode". -->
+    <div id="my_chat"></div>
 
     <script type="text/javascript">
      var chat = new Chat({
 
         greeting: [
-          'It\'s easy to insert gifs into a conversation!',
-          '<iframe src="//giphy.com/embed/l0MYEqEzwMWFCg8rm" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/chris-guardians-pratt-l0MYEqEzwMWFCg8rm">via GIPHY</a></p>',
+          'Welcome to illusion.ai',
+          'Our platform makes it easy to integrate highly customizable conversational interfaces into your web and mobile products.',
           
            
           {
             type: 'choose',
             answers: [{
-              'text': 'What about videos?',
-              'path': 'videos'
+              'text': 'Learn More',
+              'path': 'learn_more'
             },
-            ]
-          }
-        ],
-
-        videos: [
-          'Yep! Videos work great too!',
-          '<iframe width="560" height="315" src="https://www.youtube.com/embed/Jfoxsfhi-kk?rel=0" frameborder="0" allowfullscreen></iframe>',
-          {
-            type: 'choose',
-            answers: [{
-              'text': 'WOW😮',
-              'path': 'bye'
+            {
+              'text': 'Get Started',
+              'path': 'get_started'
             }]
           }
         ],
-       'bye': [
-          'Now its your turn!',
+
+        learn_more: [
+          'With illusion.ai you can easily add conversational interfaces into your existing web apps. Our platforms looks great on web or mobile, and its super easy to add media like gifs, images, or videos. ',
+          {
+            type: 'choose',
+            answers: [{
+              'text': 'Lets\'s get started.',
+              'path': 'get_started'
+            }]
+          }
+        ],
+       'get_started' [
+          'Great lets get you started creating your first illusion.ai powred cnversation',
         ],
       }, {
         targetNode: '.my_chat'
